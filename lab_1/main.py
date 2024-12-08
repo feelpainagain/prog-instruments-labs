@@ -28,6 +28,7 @@ from variables import (BESTSCOREBEATEN, BESTSCOREPATH, DAMAGE, DAMAGEPATH,
                        states_sonic, time_gif, time_gif_duck, time_score_sound,
                        time_spawn, timer)
 
+
 def handle_events() -> None:
     """
     Handles player input and updates game state accordingly.
