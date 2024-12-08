@@ -35,9 +35,9 @@ from functions import animate_gif, play_sound
 while PLAYING:
     ACCELERATION = SCORE / 2
     ACCELERATION = min(ACCELERATION, 666)
-    #####################
-    #ACTIONS DES TOUCHES#
-    #####################
+
+    # ACTIONS DES TOUCHES
+
     for event in pygame.event.get():
         state_game = LOST and time() - end_time > 3
         if event.type == 256:
@@ -85,10 +85,10 @@ while PLAYING:
                 else:
                     FALLINGSPEED = ACCELERATION
                 sonic_jump_rect.change_speed((0, -500 - FALLINGSPEED / 1.3))
-    ################
-    #SPAWN DES MOBS#
-    ################
+
+    # SPAWN DES MOBS
     # on fait spawn les mobs, avec un délais qui empêche les situations impossibles
+
     mobs_speed = 850 + ACCELERATION
     delay_mobs = 150 * 4.8/mobs_speed
     if time() >= time_spawn+delay_mobs+uniform(-0.05, 0.7) and not LOST:
@@ -164,11 +164,11 @@ while PLAYING:
 
     # tick de la frame
     tick = timer.tick(200) / 1000
-    ###################################
-    #LES FONDS --> LES DEGATS ET HEALS#
-    ###################################
+
+    # LES FONDS --> LES DEGATS ET HEALS
     # on affiche l'effet visuel de dégats(fond rouge)
     # pendant 0.25s, et de HEALING (fond vert) (default : blanc)
+
     effect_delay = time() - effect_time
     if DAMAGE and effect_delay < 0.25:
         screen.fill((255, 100, 100))
@@ -180,10 +180,9 @@ while PLAYING:
         DAMAGE = False
         HEALING = False
 
-    ############
-    #LES SCORES#
-    ############
+    # LES SCORES
     # si on a pas perdu on affiche le score actuel, sinon le last score
+
     if not LOST:
         SCORE = int(round((time() - score_timer) * 10, 0))
         if BESTSCOREBEATEN:
@@ -197,9 +196,9 @@ while PLAYING:
             play_sound(BESTSCOREPATH, 0.05)
             best_score_time = time()
         BESTSCOREBEATEN = True
-    ############
-    #ON A PERDU#
-    ############
+
+    # ON A PERDU
+
     if sonic_1_rect.health == 0:
         for i in range(len(enemies)):
             enemies.pop(0)
@@ -217,9 +216,8 @@ while PLAYING:
         with open("best_score.pickle", "wb") as f:
             pickle.dump(scores, f)
 
-    ############
-    #LES DECORS#
-    ############
+    # LES DECORS
+
     if not LOST:
         grass_rect.animate(mobs_speed, 0, tick, screen)
         grass_2_rect.animate(mobs_speed, 0, tick, screen)
@@ -236,9 +234,8 @@ while PLAYING:
         palm_rect.animate(0, 0, tick, screen)
         palm_2_rect.animate(0, 0, tick, screen)
 
-    ##############
-    #LES ENNEMIES#
-    ##############
+    # LES ENNEMIES
+
     enemies_to_pop = []
     for enemy in enemies:
         if not enemy.moving():
@@ -276,18 +273,16 @@ while PLAYING:
     for i in enemies_to_pop:
         enemies.pop(i)
 
-    #################
     #GESTION DU SAUT#
-    #################
     # si on est en cours de saut -> on change la position, sinon on redescend
     if time() - start_jump < TIMEJUMP:
         sonic_jump_rect.change_position(tick)
     else:
         sonic_jump_rect.change_speed((0, -1300 - ACCELERATION))
         start_jump = time()
-    ############
-    #LES TEXTES#
-    ############
+
+    #LES TEXTES
+
     if LOST:
         screen.blit(end_surface, end_rect)
         screen.blit(scores_screen_surface, scores_screen_rect)
@@ -306,17 +301,15 @@ while PLAYING:
         play_sound(SCORE1000PATH, 0.05)
         time_score_sound = time()
 
-    ########
-    #LES PV#
+    # LES PV
     ########
     # affichage du coeur en fonction des pv de sonic
     if not LOST:
         for i in range(sonic_1_rect.health):
             screen.blit(heart_surface, (heart_rect[0] + i*100, heart_rect[1]))
 
-    ####################
-    #AFFICHAGE DU PERSO#
-    ####################
+    # AFFICHAGE DU PERSO
+
     # on restreint les positions de sonic
     sonic_jump_rect.sonic_pos_restriction(sonic_rect)
     # si la speed est passé à 0 -> le saut n'est plus actif
