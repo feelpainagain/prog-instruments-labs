@@ -3,6 +3,7 @@ from time import time
 from random import randint, uniform
 
 import pygame
+
 from enemy import Enemy
 from high_scores_screen import screen_scores
 from functions import animate_gif, play_sound
