@@ -1,16 +1,16 @@
-2024-12-12 03:04:01,208 - logger - INFO - Bits splitted
-2024-12-12 03:04:01,208 - logger - INFO - Dictionary sorted
-2024-12-12 03:04:01,208 - logger - INFO - Complete bitwise test
-2024-12-12 03:04:01,208 - logger - INFO - Complete bitwise test
-2024-12-12 03:04:01,209 - logger - INFO - Bits splitted
-2024-12-12 03:04:01,209 - logger - INFO - Dictionary sorted
-2024-12-12 03:04:01,209 - logger - INFO - Bits splitted
-2024-12-12 03:04:01,209 - logger - INFO - Dictionary sorted
-2024-12-12 03:04:01,210 - logger - INFO - Longest sequence found
-2024-12-12 03:04:01,210 - logger - INFO - Complete bitwise test
-2024-12-12 03:04:01,210 - logger - INFO - Complete bitwise test
-2024-12-12 03:04:01,210 - logger - INFO - Bits splitted
-2024-12-12 03:04:01,210 - logger - INFO - Dictionary sorted
-2024-12-12 03:04:01,210 - logger - INFO - Bits splitted
-2024-12-12 03:04:01,210 - logger - INFO - Dictionary sorted
-2024-12-12 03:04:01,211 - logger - INFO - Longest sequence found
+2024-12-15 14:26:28,665 - logger - INFO - Bits splitted successfully
+2024-12-15 14:26:28,665 - logger - INFO - Dictionary sorted, result: {}
+2024-12-15 14:26:28,665 - logger - INFO - Complete bitwise test, result: 0.17677669529663687
+2024-12-15 14:26:28,665 - logger - INFO - Complete bitwise test successfully.
+2024-12-15 14:26:28,665 - logger - INFO - Bits splitted successfully
+2024-12-15 14:26:28,665 - logger - INFO - Dictionary sorted, result: {4: 3, 1: 3, 2: 4, 3: 6}
+2024-12-15 14:26:28,665 - logger - INFO - Bits splitted successfully
+2024-12-15 14:26:28,665 - logger - INFO - Dictionary sorted, result: {}
+2024-12-15 14:26:28,667 - logger - INFO - Longest sequence found
+2024-12-15 14:26:28,667 - logger - INFO - Complete bitwise test, result: 1.3206763594884356
+2024-12-15 14:26:28,667 - logger - INFO - Complete bitwise test successfully.
+2024-12-15 14:26:28,667 - logger - INFO - Bits splitted successfully
+2024-12-15 14:26:28,667 - logger - INFO - Dictionary sorted, result: {4: 2, 3: 3, 1: 5, 2: 6}
+2024-12-15 14:26:28,667 - logger - INFO - Bits splitted successfully
+2024-12-15 14:26:28,667 - logger - INFO - Dictionary sorted, result: {}
+2024-12-15 14:26:28,667 - logger - INFO - Longest sequence found

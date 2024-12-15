@@ -27,7 +27,7 @@ def bitwise_test(sequence: str) -> float:
                 else:
                     sum += 1
             s = math.fabs(sum) / (length**0.5)
-            logger.info("Complete bitwise test")
+            logger.info(f"Complete bitwise test, result: {s}")
             return math.erfc(s / (2**0.5))
     except Exception as error:
         logging.error(error)
@@ -58,7 +58,7 @@ def same_bits_test(sequence) -> float:
             p_value = math.erfc(num / denom)
         else:
             p_value = 0
-        logger.info("Complete bitwise test")
+        logger.info("Complete bitwise test successfully.")
         return p_value
     except Exception as ex:
         logging.error(f"ZeroDivisionError: {ex.message}\n{ex.args}\n")
@@ -80,7 +80,7 @@ def split_bits(sequence) -> list:
     for i in range(0, quantity, 8):
         block = sequence[i: i + 8]
         blocks.append(block)
-    logger.info("Bits splitted")
+    logger.info("Bits splitted successfully")
     return blocks
 
 
@@ -113,7 +113,7 @@ def largest_number_of_units(blocks: list) -> dict:
             else:
                 unit_counts[max_counter] = 1
         sorted_dict = dict(sorted(unit_counts.items(), key=lambda x: x[1]))
-        logger.info("Dictionary sorted")
+        logger.info(f"Dictionary sorted, result: {sorted_dict}")
         return sorted_dict
     except Exception as ex:
         logging.error(f"TypeError block wasn't str: {ex.message}\n{ex.args}\n")
